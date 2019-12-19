@@ -19,6 +19,7 @@ pipeline {
       }
       steps {
         sh './jenkins/scripts/test.sh'
+        sh 'echo "Env var value is $IC"'
       }
     }
 
@@ -30,5 +31,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    IC = 'true'
   }
 }
